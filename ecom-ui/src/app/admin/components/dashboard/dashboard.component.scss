@@ -1,0 +1,26 @@
+.image-preview{
+    width: 10rem;
+    height: 10rem;
+}
+
+.mat-card{
+    width: 20rem;
+    height: 20rem;
+    /* padding: 7rem; */
+    margin: 2rem;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+.search-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.prod-list-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

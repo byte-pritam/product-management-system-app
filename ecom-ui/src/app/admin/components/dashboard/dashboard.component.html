@@ -1,0 +1,53 @@
+<div class="main-container"> 
+    <div class="search-container">
+
+   
+    <form [formGroup]="searchForm" (submit)="getAllProductsByName()">
+        <mat-form-field appearance="outline">
+            <mat-label>Enter keyword to search</mat-label>
+            <input matInput formControlName="title">
+            <button mat-button matSuffix color="primary" [disabled]="searchForm?.invalid">
+                <mat-icon>search</mat-icon>
+            </button>
+
+        </mat-form-field>
+
+    </form>
+
+</div>
+<div class="prod-list-container">
+
+    <mat-card *ngFor="let product of products" class="mat-card">
+        <div class="prod-image">
+            <img [src]="product.processedImg" alt="product-img" class="image-preview" >
+        </div>
+        <div class="product-details">
+            <h2>{{product.name}} </h2>
+            <p> {{product.description}} </p>
+                <mat-divider></mat-divider>
+
+            <div class="prod-info">
+                <div class="info-row">
+                    <span> Price: </span>
+                    <span> {{product.price}} </span>
+
+                </div>
+                <div class="info-row">
+                    <span> Category: </span>
+                    <span> {{product.categoryName}} </span>
+
+                </div>
+                <mat-divider></mat-divider>
+                <div class="actions">
+                    <button mat-raised-button color="primary" class="" routerLink="'/admin/faq/'+ product.id">FAQ</button>
+                    <button mat-raised-button color="accent" class="" routerLink="'/admin/product/'+ product.id">Update</button>
+                    <button mat-raised-button color="warn" class="" >FAQ</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </mat-card>
+</div>
+</div>
